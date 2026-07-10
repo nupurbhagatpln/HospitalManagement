@@ -8,6 +8,8 @@ import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Repository;
 
 import java.sql.SQLOutput;
@@ -19,8 +21,14 @@ import java.util.Optional;
 @SpringBootTest
 public class PaitentTest {
 //
-//    @Autowired
-//    private PaitentRepository paitentRepository;
+    @Autowired
+    private PaitentRepository paitentRepository;
+
+    @Test
+    public void testPatientPage()
+    {
+       Page<Paitent> pagePaitent=paitentRepository.fetchAllPatient(PageRequest.of(0,2));
+    }
 //
 //    @Test
 //    public void testPaitentRepository(){

@@ -4,6 +4,8 @@ import com.springboot.jpa.hospitalManagement.dto.CountBloodGroup;
 import com.springboot.jpa.hospitalManagement.entities.Paitent;
 import com.springboot.jpa.hospitalManagement.entities.type.BloodGroupType;
 import jakarta.transaction.Transactional;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -34,6 +36,9 @@ public interface PaitentRepository extends JpaRepository<Paitent, Long> {
     @Query("select new com.springboot.jpa.hospitalManagement.dto.CountBloodGroup(p.bloodGroup,Count(p))" +"from Paitent p group by p.bloodGroup")
 //    List<Object[]> findBloodGroupCount();
     List<CountBloodGroup> findBloodGroupCount();
+
+    @Query("select paitent p from paitent")
+    Page<Paitent> fetchAllPatient(Pageable pageable);
 
     @Transactional
     @Modifying
