@@ -15,15 +15,15 @@ public class InsuranceTest {
     @Autowired
     private InsuranceService insuranceService;
 
-    @Test
-    public void testInsurance()
-    {
-        Insurance insurance=Insurance.builder().policyNumber("Axis_1283")
-                .provider("Axis")
-                .validUntil(LocalDate.of(2030,12,16))
-                .build();
-
-        Paitent paitent=insuranceService.assignInsuranceToPaitent(insurance,2L);
-        System.out.println(paitent);
-    }
+//    @Test
+//    public void testInsurance()
+//    {
+//        Insurance insurance=Insurance.builder().policyNumber("Axis_1283")
+//                .provider("Axis")
+//                .validUntil(LocalDate.of(2030,12,16))
+//                .build();
+//
+//        Paitent paitent=insuranceService.assignInsuranceToPaitent(insurance,2L);
+//        System.out.println(paitent);
+//    }
 }

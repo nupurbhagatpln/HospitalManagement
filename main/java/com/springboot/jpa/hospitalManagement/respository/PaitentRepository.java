@@ -37,8 +37,11 @@ public interface PaitentRepository extends JpaRepository<Paitent, Long> {
 //    List<Object[]> findBloodGroupCount();
     List<CountBloodGroup> findBloodGroupCount();
 
-    @Query("select paitent p from paitent")
-    Page<Paitent> fetchAllPatient(Pageable pageable);
+//    @Query("select paitent p from paitent")
+//    Page<Paitent> fetchAllPatient(Pageable pageable);
+
+    @Query(value = "select * from patient", nativeQuery = true)
+    Page<Paitent> findAllPatients(Pageable pageable);
 
     @Transactional
     @Modifying

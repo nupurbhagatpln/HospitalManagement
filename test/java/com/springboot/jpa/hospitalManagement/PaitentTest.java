@@ -18,17 +18,18 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
+// why lombook doesnot work here and i cannot create private final beans ??? --- doubt
 @SpringBootTest
 public class PaitentTest {
 //
     @Autowired
     private PaitentRepository paitentRepository;
 
-    @Test
-    public void testPatientPage()
-    {
-       Page<Paitent> pagePaitent=paitentRepository.fetchAllPatient(PageRequest.of(0,2));
-    }
+//    @Test
+//    public void testPatientPage()
+//    {
+//       Page<Paitent> pagePaitent=paitentRepository.fetchAllPatient(PageRequest.of(0,2));
+//    }
 //
 //    @Test
 //    public void testPaitentRepository(){

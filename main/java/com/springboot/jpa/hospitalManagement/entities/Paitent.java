@@ -44,6 +44,6 @@ public class Paitent {
 
     @OneToMany(mappedBy = "paitent", cascade= {CascadeType.REMOVE},orphanRemoval = true)
     @ToString.Exclude
-    List<Appointment> appointmentList= new ArrayList<>();
+    List<Appointment> appointments= new ArrayList<>();
 
 }
